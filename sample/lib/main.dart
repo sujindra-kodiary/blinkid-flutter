@@ -147,7 +147,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text("BlinkID Demo"),
+          title: const Text("BlinkID Sample"),
         ),
         body: SingleChildScrollView(
             padding: EdgeInsets.all(16.0),
