@@ -1,12 +1,11 @@
 # BlinkID SDK Flutter plugin
 
 This repository contains example plugin for BlinkID native SDKs ([iOS](https://github.com/BlinkID/blinkid-ios)
-and [Android](https://github.com/BlinkID/blinkid-android)).
+and [Android](https://github.com/BlinkID/blinkid-android)). Plugin currently supports only `BlinkIdCombinedRecognizer`.
 For 100% of features and maximum control, consider using native SDK.
 
 ## Requirements
-BlinkID plugin is developed with Flutter SDK version 1.12.13 and requires Dart 2 SDK
-that's version 2.1.0 or higher.
+BlinkID plugin is developed with Flutter SDK version 1.12.13.
 For help with Flutter, view official [documentation](https://flutter.dev/docs).
 
 ## Getting Started
@@ -14,11 +13,10 @@ To get started first clone the repository:
 ```shell
 git clone https://github.com/BlinkID/blinkid-flutter.git
 ```
-To install needed dependencies run `flutter pub get`.
 
 To run sample application use following commands:
 ```shell
-cd example/
+cd sample/
 flutter run
 ```
 If there are problems with running the application, please make sure you have
@@ -32,15 +30,14 @@ folder `android` and `ios`.
 #### Android
 Android specific implementation is in folder `android`. It contains Java code for
 performing scan. `BlinkIdPlugin.java` is main file with scanning logic, it uses
-`BlinkIdCombinedRecognizer`, but can easily be changed to different Recognizer.
-For easier scan results extraction, two utils files are given:
+`BlinkIdCombinedRecognizer`. For easier scan results extraction, two utils files are given:
 `BlinkIdCombinedRecognizerSerialization` and `SerializationUtils`.
 
 #### iOS
 iOS specific implementation is currently **in development** and is not available.
 
 ### Sample application
-To try BlinkID plugin, there is a minimal sample application in `example` folder.
+To try BlinkID plugin, there is a minimal sample application in `sample` folder.
 Sample currently works only on Android and can be run on devices with
 Android 4.1 version (API level 16) or higher.
 
