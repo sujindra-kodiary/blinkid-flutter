@@ -16,7 +16,7 @@ git clone https://github.com/BlinkID/blinkid-flutter.git
 ```
 To install needed dependencies run `flutter pub get`.
 
-To run sample application use following command:
+To run sample application use following commands:
 ```shell
 cd example/
 flutter run
@@ -37,7 +37,7 @@ For easier scan results extraction, two utils files are given:
 `BlinkIdCombinedRecognizerSerialization` and `SerializationUtils`.
 
 #### iOS
-iOS specific implementation is currently in development and is not available.
+iOS specific implementation is currently **in development** and is not available.
 
 ### Sample application
 To try BlinkID plugin, there is a minimal sample application in `example` folder.
