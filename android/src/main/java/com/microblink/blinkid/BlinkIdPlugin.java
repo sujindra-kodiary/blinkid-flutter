@@ -31,11 +31,12 @@ public class BlinkIdPlugin implements FlutterPlugin, MethodCallHandler, PluginRe
 
   private static final int REQ_CODE = 1904;
 
-  private static final String SCAN = "scan";
-  private static final String ARG_LICENSE = "license";
-  private static final String CANCELLED = "cancelled";
+  private static final String CHANNEL = "blinkid";
 
-  private static final String RESULT = "result";
+  private static final String SCAN_METHOD = "scan";
+  private static final String ARG_LICENSE = "license";
+  private static final String SCAN_CANCELLED = "cancelled";
+  private static final String SCAN_RESULT = "result";
 
   private RecognizerBundle recognizerBundle;
 
@@ -43,8 +44,6 @@ public class BlinkIdPlugin implements FlutterPlugin, MethodCallHandler, PluginRe
   private Context context;
 
   private Result pendingResult;
-
-  private static final String CHANNEL = "blinkid";
 
   public static void registerWith(Registrar registrar) {
     final BlinkIdPlugin plugin = new BlinkIdPlugin();
@@ -71,7 +70,7 @@ public class BlinkIdPlugin implements FlutterPlugin, MethodCallHandler, PluginRe
 
   @Override
   public void onMethodCall(@NonNull MethodCall call, @NonNull Result result) {
-    if (call.method.equals(SCAN)) {
+    if (call.method.equals(SCAN_METHOD)) {
       this.pendingResult = result;
 
       MicroblinkSDK.setLicenseKey((String) call.argument(ARG_LICENSE), context);
@@ -111,9 +110,9 @@ public class BlinkIdPlugin implements FlutterPlugin, MethodCallHandler, PluginRe
         recognizerBundle.loadFromIntent(data);
         JSONObject result = new JSONObject();
         try {
-          result.put(CANCELLED, false);
+          result.put(SCAN_CANCELLED, false);
           result.put(
-                  RESULT,
+                  SCAN_RESULT,
                   BlinkIdCombinedRecognizerSerialization.serializeResult(
                           recognizerBundle.getRecognizers()[0]
                   )
@@ -127,7 +126,7 @@ public class BlinkIdPlugin implements FlutterPlugin, MethodCallHandler, PluginRe
       } else if (resultCode == Activity.RESULT_CANCELED) {
         JSONObject result = new JSONObject();
         try {
-          result.put(CANCELLED, true);
+          result.put(SCAN_CANCELLED, true);
         } catch (JSONException e) {
           throw new RuntimeException(e);
         }

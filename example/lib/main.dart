@@ -38,9 +38,9 @@ class _MyAppState extends State<MyApp> {
     // setState to update our non-existent appearance.
     if (!mounted) return;
 
-    if (results != null && results["cancelled"] == false) {
+    if (results != null && results[BlinkId.SCAN_CANCELLED] == false) {
       setState(() {
-        _scanResult = results["result"];
+        _scanResult = results[BlinkId.SCAN_RESULT];
         _scanResultString = buildResultString();
         _fullDocumentFrontImageBase64 =
             getEncodedImage("fullDocumentFrontImage");
