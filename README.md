@@ -7,7 +7,7 @@ For 100% of features and maximum control, consider using native SDK.
 ## Requirements
 BlinkID plugin is developed with Flutter SDK version 1.12.13 and requires Dart 2 SDK
 that's version 2.1.0 or higher.
-For help with Flutter, view official online documentation](https://flutter.dev/docs).
+For help with Flutter, view official [documentation](https://flutter.dev/docs).
 
 ## Getting Started
 To get started first clone the repository:
@@ -34,7 +34,7 @@ Android specific implementation is in folder `android`. It contains Java code fo
 performing scan. `BlinkIdPlugin.java` is main file with scanning logic, it uses
 `BlinkIdCombinedRecognizer`, but can easily be changed to different Recognizer.
 For easier scan results extraction, two utils files are given:
-`BlinkIdCombinedRecognizerSerialization` and 'SerializationUtils'.
+`BlinkIdCombinedRecognizerSerialization` and `SerializationUtils`.
 
 #### iOS
 iOS specific implementation is currently in development and is not available.
