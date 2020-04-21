@@ -26,7 +26,9 @@ class _MyAppState extends State<MyApp> {
 
     // Platform messages may fail, so we use a try/catch PlatformException.
     try {
-      results = await BlinkId.scan;
+      // Set your license here
+      String license = "sRwAAAAlY29tLm1pY3JvYmxpbmsuYmxpbmtpZC5mbHV0dGVyLnNhbXBsZRZ6oiXEI76P+UYnfRsA4+gCFj8ifJdPjtPehAYJD8P2/vPMcqjblVsjKDt10dUM9W5UxEg+Dug5jlMhzwUDVRwa6KjNQ5SaGYEJDlzL8cegfVJSHtf4NzqFfyzl3UwCFIUQYGxfZpkX2fuJQqsl6Ch9MJQ9BiOcJJW83bfaNeHLDSxFblIVoD7W5vuw8o4mz8pC52ZGfspUKe65mgx3eAWrO6jPe15rsvIg42UUUMQSmk8Pvx3NfyR94gakhK3OX3EGzDkrZFqg78KRdlwFzA==";
+      results = await BlinkId.scan(license);
     } on PlatformException {
       // handle exception
     }

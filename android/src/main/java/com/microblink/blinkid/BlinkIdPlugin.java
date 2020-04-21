@@ -32,6 +32,7 @@ public class BlinkIdPlugin implements FlutterPlugin, MethodCallHandler, PluginRe
   private static final int REQ_CODE = 1904;
 
   private static final String SCAN = "scan";
+  private static final String ARG_LICENSE = "license";
   private static final String CANCELLED = "cancelled";
 
   private static final String RESULT = "result";
@@ -73,11 +74,7 @@ public class BlinkIdPlugin implements FlutterPlugin, MethodCallHandler, PluginRe
     if (call.method.equals(SCAN)) {
       this.pendingResult = result;
 
-      MicroblinkSDK.setLicenseKey(
-              "sRwAAAAlY29tLm1pY3JvYmxpbmsuYmxpbmtpZC5mbHV0dGVyLnNhbXBsZRZ6oiXEI76P+UYnfRsA4+gCFj8ifJdPjtPehAYJD8P2/vPMcqjblVsjKDt10dUM9W5UxEg+Dug5jlMhzwUDVRwa6KjNQ5SaGYEJDlzL8cegfVJSHtf4NzqFfyzl3UwCFIUQYGxfZpkX2fuJQqsl6Ch9MJQ9BiOcJJW83bfaNeHLDSxFblIVoD7W5vuw8o4mz8pC52ZGfspUKe65mgx3eAWrO6jPe15rsvIg42UUUMQSmk8Pvx3NfyR94gakhK3OX3EGzDkrZFqg78KRdlwFzA==",
-              context
-      );
-
+      MicroblinkSDK.setLicenseKey((String) call.argument(ARG_LICENSE), context);
       MicroblinkSDK.setIntentDataTransferMode(IntentDataTransferMode.PERSISTED_OPTIMISED);
 
       BlinkIdCombinedRecognizer recognizer = new BlinkIdCombinedRecognizer();
