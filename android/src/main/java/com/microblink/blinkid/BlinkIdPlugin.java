@@ -138,7 +138,7 @@ public class BlinkIdPlugin implements FlutterPlugin, MethodCallHandler, PluginRe
         pendingResult.success(result.toString());
 
       } else {
-//        pendingResult.error("Unexpected error", null, null);
+        pendingResult.error("Unexpected error", null, null);
       }
 
       pendingResult = null;
