@@ -38,7 +38,7 @@ dev_dependencies:
     path: path/to/blinkid-plugin
 ```
 
-2. Perform scan by calling method `BlinkId.scan()` with your license key. To Find out more about licensing click
+2. Perform scan by calling method `BlinkId.scan()` with your license key. To find out more about licensing, click
  [here](#licensing).
 ```dart
 Future<void> scan() async {
