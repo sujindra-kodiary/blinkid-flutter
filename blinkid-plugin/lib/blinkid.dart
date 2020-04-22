@@ -14,4 +14,11 @@ class BlinkId {
   static Future<Map<String, dynamic>> scan(license) async {
     return jsonDecode(await _channel.invokeMethod(SCAN_METHOD, {ARG_LICENSE: license}));
   }
+
+  static bool isResultValid(result) {
+    // Empty => 1
+    // Uncertain => 2
+    // Valid => 3
+    return result["resultState"] == 3;
+  }
 }

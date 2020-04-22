@@ -51,7 +51,7 @@ class _MyAppState extends State<MyApp> {
   }
 
   String getEncodedImage(String imageTitle) {
-    if (isResultValid()) {
+    if (BlinkId.isResultValid(_scanResult)) {
       return _scanResult[imageTitle];
     }
     return "";
@@ -60,7 +60,7 @@ class _MyAppState extends State<MyApp> {
   String buildResultString() {
     String resultString = "";
 
-    if (isResultValid()) {
+    if (BlinkId.isResultValid(_scanResult)) {
       resultString = "First name: ${_scanResult["firstName"]}\n"
           "Last name: ${_scanResult["lastName"]}\n"
           "Address: ${_scanResult["address"]}\n"
@@ -89,13 +89,6 @@ class _MyAppState extends State<MyApp> {
     }
 
     return resultString;
-  }
-
-  bool isResultValid() {
-    // Empty => 1
-    // Uncertain => 2
-    // Valid => 3
-    return _scanResult["resultState"] == 3;
   }
 
   @override
