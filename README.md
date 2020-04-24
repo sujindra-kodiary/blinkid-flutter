@@ -1,8 +1,9 @@
 # BlinkID SDK Flutter plugin
 
 This repository contains example plugin for BlinkID native SDKs ([iOS](https://github.com/BlinkID/blinkid-ios)
-and [Android](https://github.com/BlinkID/blinkid-android)). Plugin currently supports only `BlinkIdCombinedRecognizer`.
-For 100% of features and maximum control, consider using native SDK.
+and [Android](https://github.com/BlinkID/blinkid-android)). 
+
+> :warning: This is a beta version of the plugin. Plugin currently supports only `BlinkIdCombinedRecognizer`, other features are not available. For 100% of features and maximum control, consider using native SDK.
 
 ## Requirements
 BlinkID plugin is developed with Flutter SDK version 1.12.13.
