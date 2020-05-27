@@ -79,5 +79,5 @@ performing a scan. `BlinkIdPlugin.java` is the main file with scanning logic, it
 iOS specific implementation is currently **in development** and is not available.
 
 ## Licensing
-- [Generate](https://microblink.com/login?url=/customer/generatedemolicence) a **free demo license key** to start using the SDK in your app (registration required)
+- [Generate](https://microblink.com/login?url=/customer/generatedemolicence) a **free trial license key** to start using the SDK in your app (registration required)
 - Get information about pricing and licensing of [BlinkID](https://microblink.com/blinkid)
